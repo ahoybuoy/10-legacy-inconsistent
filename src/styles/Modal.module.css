@@ -1,0 +1,132 @@
+/* Modal styles using CSS Modules */
+/* Different design tokens than other modal implementations */
+
+.bodyLocked {
+  overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 200ms ease-out;
+}
+
+.modal {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+/* Different size naming than Modal.jsx */
+.modalSmall {
+  width: 100%;
+  max-width: 400px;
+}
+
+.modalMedium {
+  width: 100%;
+  max-width: 560px;
+}
+
+.modalLarge {
+  width: 100%;
+  max-width: 720px;
+}
+
+.modalFullscreen {
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  max-width: none;
+  max-height: none;
+  border-radius: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0F172A;
+  line-height: 1.4;
+}
+
+.description {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: -8px -8px 0 0;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #94A3B8;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.closeButton:hover {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
+.content {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  border-radius: 0 0 16px 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

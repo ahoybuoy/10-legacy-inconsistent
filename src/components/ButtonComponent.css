@@ -1,0 +1,107 @@
+/* ButtonComponent styles - yet another approach */
+/* Uses completely different color values than other buttons */
+
+.btn-component {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 3px; /* Different radius than others */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600; /* Different weight */
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+/* Size variants - different scale than others */
+.btn-component--compact {
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.btn-component--regular {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.btn-component--spacious {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+/* Color variants - different palette */
+.btn-component--default {
+  background-color: #5A67D8; /* Different blue */
+  color: white;
+}
+
+.btn-component--default:hover:not(.btn-component--disabled) {
+  background-color: #4C51BF;
+}
+
+.btn-component--accent {
+  background-color: #38B2AC; /* Teal - not in other buttons */
+  color: white;
+}
+
+.btn-component--accent:hover:not(.btn-component--disabled) {
+  background-color: #319795;
+}
+
+.btn-component--negative {
+  background-color: #E53E3E; /* Different red */
+  color: white;
+}
+
+.btn-component--negative:hover:not(.btn-component--disabled) {
+  background-color: #C53030;
+}
+
+.btn-component--subtle {
+  background-color: transparent;
+  color: #5A67D8;
+}
+
+.btn-component--subtle:hover:not(.btn-component--disabled) {
+  background-color: #EDF2F7;
+}
+
+.btn-component--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-component--loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-component__spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+.btn-component__icon {
+  display: flex;
+  align-items: center;
+}
+
+.btn-component__icon--left {
+  margin-right: 2px;
+}
+
+.btn-component__icon--right {
+  margin-left: 2px;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
