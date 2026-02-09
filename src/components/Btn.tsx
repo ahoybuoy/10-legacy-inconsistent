@@ -20,6 +20,9 @@ interface BtnProps {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 // Different color palette than Button.jsx
@@ -106,6 +109,11 @@ const StyledBtn = styled.button<{
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  &:focus-visible {
+    outline: 2px solid ${colors.primary};
+    outline-offset: 2px;
+  }
 `;
 
 const Spinner = styled.span`
@@ -132,6 +140,9 @@ export const Btn: React.FC<BtnProps> = ({
   children,
   onClick,
   disabled = false,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedBy,
+  type = 'button',
 }) => {
   return (
     <StyledBtn
@@ -140,8 +151,13 @@ export const Btn: React.FC<BtnProps> = ({
       $fullWidth={fullWidth}
       onClick={onClick}
       disabled={disabled || isLoading}
+      aria-label={ariaLabel}
+      aria-describedby={ariaDescribedBy}
+      aria-busy={isLoading || undefined}
+      aria-disabled={disabled || undefined}
+      type={type}
     >
-      {isLoading ? <Spinner /> : leftIcon}
+      {isLoading ? <Spinner aria-hidden="true" /> : leftIcon}
       {children}
       {!isLoading && rightIcon}
     </StyledBtn>
