@@ -1,0 +1,66 @@
+.legacy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.legacy-modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.legacy-modal__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.legacy-modal__description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.legacy-modal__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.legacy-modal__btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 150ms ease;
+}
+
+.legacy-modal__btn--primary {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.legacy-modal__btn--primary:hover {
+  background-color: #4338ca;
+}
+
+.legacy-modal__btn--secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.legacy-modal__btn--secondary:hover {
+  background-color: #e5e7eb;
+}
