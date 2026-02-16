@@ -89,6 +89,7 @@ class Card extends Component {
       padding: '12px 20px',
       borderTop: '1px solid #EDF2F7',
       backgroundColor: '#F7FAFC',
+      color: '#5A67D8',
     };
 
     return (
